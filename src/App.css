@@ -1,0 +1,52 @@
+.App {
+  display: inline;
+  text-align: center;
+}
+
+
+
+h1, span {
+  margin: 0;
+  padding: 0;
+  align-self: center;
+}
+
+h1 {
+  right: 0;
+  top: 0;
+  position: fixed;
+
+}
+
+.headcontainer {
+ 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: visible;
+  margin-left: 160px; 
+  flex-wrap: nowrap;
+}
+
+.mapcontainer {
+  font-size: 28px; 
+  padding: 0px ;
+}
+
+.listcontainer {
+  height: 100%;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    
+    padding-top: 20px;
+}
+button {
+
+  margin-left: 0;
+}
+
+
+
