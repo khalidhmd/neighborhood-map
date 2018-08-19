@@ -9,11 +9,9 @@ export default class extends Component {
       zoom: 13
     });
 
-    var infoWindow = new window.google.maps.InfoWindow({
+    var infoWindow = new window.google.maps.InfoWindow();
 
-    });
-
-
+    var markers = [];
 
     this.props.locations.forEach((loc, index) => {
       var marker = new window.google.maps.Marker({
@@ -23,10 +21,15 @@ export default class extends Component {
       });
 
       marker.addListener('click', function () {
+        infoWindow.setContent(marker.title);
         infoWindow.open(map, marker);
       });
+      markers.push(marker);
     }); 
 
+    this.props.addMarkers(markers);
+    this.props.addMap(map);
+    this.props.addInfoWindow(infoWindow);
 
   }
 
