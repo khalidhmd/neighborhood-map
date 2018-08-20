@@ -48,6 +48,9 @@ button {
   margin-left: 0;
 }
 
+h1 {
+  margin: auto;
+}
 
 ol {
   padding-left: 15px;

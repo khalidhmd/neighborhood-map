@@ -12,7 +12,7 @@ class ListView extends Component {
   clickMarker = (e) => {
     let marker;
     marker = this.props.markers.find(el => el.id == e.target.dataset.id);
-    
+    this.props.bounceMarker(marker);
     this.props.infoWindow.setContent(marker.title)
     this.props.infoWindow.open(this.props.map, marker);
     //this.props.infoWindow.setContent(this.props.markers[e.target.dataset.id].title)

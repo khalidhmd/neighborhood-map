@@ -33,6 +33,11 @@ class App extends Component {
     this.setState({ infoWindow });
   }
 
+  bounceMarker = (marker) => {
+    marker.setAnimation(window.google.maps.Animation.BOUNCE);
+    setTimeout(function(){marker.setAnimation(null); }, 1000);
+  }
+
   updateMarkers = (locations) => {
     if (this.state.infoWindow != null) this.state.infoWindow.close();
     if (this.state.markers != null) {
@@ -52,11 +57,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App' style={{ height: '100%' }}>
+      <div className='App' style={{ height: '95%' }}>
 
         <div className='headcontainer' >
-          <button>show list</button>
-          <h1>the map</h1>
+          <button>Toggle list</button>
+          <h1>{this.state.neighborhood}</h1>
         </div>
 
         <div className='mapcontainer' style={{ height: '100%' }}>
@@ -72,7 +77,8 @@ class App extends Component {
             map={this.state.map}
             markers={this.state.markers}
             infoWindow={this.state.infoWindow}
-            updateMarkers={this.updateMarkers} />
+            updateMarkers={this.updateMarkers} 
+            bounceMarker={this.bounceMarker}/>
         </div>
 
       </div>

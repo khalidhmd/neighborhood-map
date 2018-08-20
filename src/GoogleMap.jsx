@@ -6,7 +6,7 @@ export default class extends Component {
   componentDidMount() {
     var map = new window.google.maps.Map(this.refs.map, {
       center: { lat: this.props.locations[0].lat, lng: this.props.locations[0].lng },
-      zoom: 14
+      zoom: 15
     });
 
     var infoWindow = new window.google.maps.InfoWindow();
