@@ -25,6 +25,16 @@ class App extends Component {
     this.setState({ markers });
   }
 
+  toggleList = () => {
+
+    var x = document.getElementsByClassName("listcontainer")[0];
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+
   addMap = (map) => {
     this.setState({ map });
   }
@@ -60,7 +70,7 @@ class App extends Component {
       <div className='App' style={{ height: '95%' }}>
 
         <div className='headcontainer' >
-          <button>Toggle list</button>
+          <button onClick={this.toggleList}>Toggle list</button>
           <h1>{this.state.neighborhood}</h1>
         </div>
 
