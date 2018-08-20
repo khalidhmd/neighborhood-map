@@ -24,7 +24,7 @@ h1 {
   padding: 0;
   display: flex;
   overflow: visible;
-  margin-left: 160px; 
+  margin-left: 220px; 
   flex-wrap: nowrap;
 }
 
@@ -35,7 +35,7 @@ h1 {
 
 .listcontainer {
   height: 100%;
-    width: 160px;
+    width: 220px;
     position: fixed;
     top: 0;
     left: 0;
@@ -49,4 +49,6 @@ button {
 }
 
 
-
+ol {
+  padding-left: 15px;
+}

@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import './App.css'
-
+import escapeRegExp from 'escape-string-regexp'
 
 class ListView extends Component {
 
@@ -16,31 +16,34 @@ class ListView extends Component {
 
   updateQuery = (query) => {
     this.setState({ query })
-    if (query) {
-      
-    } else {
-      //this.setState({ showingBooks })
-    }
+    
   }
 
   render() {
-
+    let locations;
+    if (this.state.query) {
+      const match = new RegExp(escapeRegExp(this.state.query), 'i');
+      locations = this.props.locations.filter((loc) => match.test(loc.name));
+    } else {
+      locations = JSON.parse(JSON.stringify(this.props.locations)); 
+    }
+    
     return (
       <div >
-        <div >
-
+        
+        
           <div >
-
+          
             <input 
               type="text"
               placeholder="Search by place name"
-              value={this.state.query}/>
-
+              value={this.state.query}
+              onChange = {(event) => this.updateQuery(event.target.value)}/>
           </div>
-        </div>
+        
         <div >
           <ol >
-            {this.props.locations.map((loc, i) => (
+            {locations.map((loc, i) => (
               <li key={i} data-key={i} onClick={this.clickMarker} className="listitem">
                 {loc.name}
               </li>))}
