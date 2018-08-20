@@ -3,7 +3,7 @@ import './App.css'
 import escapeRegExp from 'escape-string-regexp'
 
 class ListView extends Component {
-
+  locations = []
   state = {
     query: ''
     
@@ -20,17 +20,20 @@ class ListView extends Component {
   }
 
   updateQuery = (query) => {
-    this.setState({ query })
+    this.setState({ query });
+    this.props.updateMarkers(this.locations);
     
   }
 
   render() {
-    let locations;
+    //let locations;
     if (this.state.query) {
       const match = new RegExp(escapeRegExp(this.state.query), 'i');
-      locations = this.props.locations.filter((loc) => match.test(loc.name));
+      this.locations = this.props.locations.filter((loc) => match.test(loc.name));
+      this.props.updateMarkers(this.locations);
     } else {
-      locations = JSON.parse(JSON.stringify(this.props.locations)); 
+      this.locations = JSON.parse(JSON.stringify(this.props.locations));
+      this.props.updateMarkers(this.locations);
     }
     
     return (
@@ -48,7 +51,7 @@ class ListView extends Component {
         
         <div >
           <ol >
-            {locations.map((loc, i) => (
+            {this.locations.map((loc, i) => (
               <li key={i} data-id={loc.id} onClick={this.clickMarker} className="listitem">
                 {loc.name}
               </li>))}
