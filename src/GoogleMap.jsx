@@ -13,11 +13,12 @@ export default class extends Component {
 
     var markers = [];
 
-    this.props.locations.forEach((loc, index) => {
+    this.props.locations.forEach((loc) => {
       var marker = new window.google.maps.Marker({
         position: { lat: loc.lat, lng: loc.lng },
         map: map,
-        title: loc.name
+        title: loc.name,
+        id: loc.id
       });
 
       marker.addListener('click', function () {

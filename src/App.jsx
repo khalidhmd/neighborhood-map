@@ -6,11 +6,11 @@ import ListView from './ListView';
 
 class App extends Component {
   locations= [
-    {lat: 30.841566, lng: 28.927095, name:'Golf Porto Marina'},
-    {lat: 30.847001, lng: 28.91799, name:'Marseilia Aqua Park'},
-    {lat: 30.8389085, lng: 28.9438996, name:'Remal Resort'},
-    {lat: 30.8416904, lng: 28.9388141, name:'Alamein WWII Museum'},
-    {lat: 30.8469041, lng: 28.9420542, name:'Maxim Inn Lake View'}
+    {lat: 30.841566, lng: 28.927095, name:'Golf Porto Marina', id: 0},
+    {lat: 30.847001, lng: 28.91799, name:'Marseilia Aqua Park', id: 1},
+    {lat: 30.8389085, lng: 28.9438996, name:'Remal Resort', id: 2},
+    {lat: 30.8416904, lng: 28.9388141, name:'Alamein WWII Museum', id: 3},
+    {lat: 30.8469041, lng: 28.9420542, name:'Maxim Inn Lake View', id: 4}
   ]
   state = {
     query: '',

@@ -10,8 +10,13 @@ class ListView extends Component {
   }
 
   clickMarker = (e) => {
-    this.props.infoWindow.setContent(this.props.markers[e.target.dataset.key].title)
-    this.props.infoWindow.open(this.props.map, this.props.markers[e.target.dataset.key]);
+    let marker;
+    marker = this.props.markers.find(el => el.id == e.target.dataset.id);
+    
+    this.props.infoWindow.setContent(marker.title)
+    this.props.infoWindow.open(this.props.map, marker);
+    //this.props.infoWindow.setContent(this.props.markers[e.target.dataset.id].title)
+    //this.props.infoWindow.open(this.props.map, this.props.markers[e.target.dataset.id]);
   }
 
   updateQuery = (query) => {
@@ -44,7 +49,7 @@ class ListView extends Component {
         <div >
           <ol >
             {locations.map((loc, i) => (
-              <li key={i} data-key={i} onClick={this.clickMarker} className="listitem">
+              <li key={i} data-id={loc.id} onClick={this.clickMarker} className="listitem">
                 {loc.name}
               </li>))}
           </ol>
