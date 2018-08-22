@@ -33,7 +33,7 @@ If you typed a text in the input text in the side list, the list will be filtere
 
 ## How to use chashing
 
-The app contains functionality for caching via service workers. However, this is not enables in the develeoment mode. The caching can only be enables in production by setting environment varable as follows;
+The app contains functionality for caching via service workers. However, this is not enables in the develeoment mode. The caching can only be enables in production by setting environment varable on the production server as follows;
 NODE_ENV = 'production' 
 
 ## License
