@@ -70,11 +70,11 @@ class App extends Component {
       <div className='App' style={{ height: '95%' }}>
 
         <div className='headcontainer' >
-          <button onClick={this.toggleList}>Toggle list</button>
+          <button tabIndex='0' onClick={this.toggleList} role='button'>Toggle list</button>
           <h1>{this.state.neighborhood}</h1>
         </div>
 
-        <div className='mapcontainer' style={{ height: '100%' }}>
+        <div className='mapcontainer' role='application' style={{ height: '100%' }}>
           <GoogleMap
             locations={this.state.showingLocations}
             addMarkers={this.addMarkers}
