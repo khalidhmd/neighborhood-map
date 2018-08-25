@@ -70,7 +70,7 @@ class App extends Component {
       <div className='App' style={{ height: '95%' }}>
 
         <div className='headcontainer' >
-          <button tabIndex='0' onClick={this.toggleList} role='button'>Toggle list</button>
+          <div><button tabIndex='0' onClick={this.toggleList}>Toggle list</button></div>
           <h1>{this.state.neighborhood}</h1>
         </div>
 
