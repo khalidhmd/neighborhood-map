@@ -40,10 +40,10 @@ h1 {
   height: 100%;
     width: 220px;
     position: fixed;
-    top: 8%;
+    top: 7%;
     left: 0;
     background-color: #111;
-    
+    display: none;
     padding-top: 20px;
 }
 button {

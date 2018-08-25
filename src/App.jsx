@@ -54,7 +54,8 @@ class App extends Component {
   toggleList = () => {
 
     var x = document.getElementsByClassName("listcontainer")[0];
-    if (x.style.display === "none") {
+    
+    if (x.style.display === "none" || x.style.display === "") {
       x.style.display = "block";
     } else {
       x.style.display = "none";
