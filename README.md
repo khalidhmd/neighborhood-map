@@ -7,6 +7,7 @@ Below you will find some information on how to start and use the the app
 - [How to start the app](#How-to-Start-the-App)
 - [How to use the app](#How-to-use-the-app)
 - [How to use caching ( service worker )](#How-to-use-caching)
+- [Foursquare data for location](#Foursquare)
 - [License](#License)
 
 
@@ -39,3 +40,7 @@ NODE_ENV = 'production'
 ## License
 
 This app is available under MIT license.
+
+## Foursquare
+
+This app uses Foursquare API to load location data. the code is found in componentDidMount() function of the App component. the code gets info for selected location latlng and limit the returned data to 5 locations. the code checks response issues for both the response code of non-200 for successfull response received, or in catch block for unsuccessfull response.
