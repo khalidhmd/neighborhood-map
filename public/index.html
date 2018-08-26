@@ -11,39 +11,12 @@
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-  <!-- <script>
-    var locations = [];
-    fetch('https://api.foursquare.com/v2/venues/explore?client_id=M1CVUYDUONKJ4H4ZMZ5Y2TXBPKYW35GIPS1JIMDYVVRG2ZP3&client_secret=RI5FRWTKNE2BUYSHOUE0HKF1L3VNY2KWUAR3IG03I0FPNR0R&v=20180323&limit=5&ll=30.841566,28.927095')
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (jsonData) {
-        if (jsonData['meta']['code'] != 200) {
-          alert('Error while parsing the location data returned from Foursquare.');
-          return;
-        }
-        //console.log(jsonData);
-        let locationData = [];
-        for (let i = 0; i < jsonData['response']['groups'][0]['items'].length; i++) {
-          const loc = {};
-          loc.lat = jsonData['response']['groups'][0]['items'][i]['venue']['location']['lat'];
-          loc.lng = jsonData['response']['groups'][0]['items'][i]['venue']['location']['lng'];
-          loc.name = jsonData['response']['groups'][0]['items'][i]['venue']['name'];
-          loc.id = i;
-          locationData.push(loc);
-
-        }
-        locations = locationData;
-        console.log(window.locations);
-        //console.log(window.locations);
-        //this.locations = JSON.parse(JSON.stringify(window.locations));
-      })
-      .catch(function (e) {
-        // Code for handling errors
-        console.log('Did not get response successfully from Foursquare' + e);
-      });
+  <script>
+    function googleError() {
+      alert('Google Maps API did not load successfull.');
+    }
    
-  </script> -->
+  </script>
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -54,7 +27,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA9PnjJp4adpiQWFZ9-K4nBhkoH3jclaY"></script>
+  <script async  defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA9PnjJp4adpiQWFZ9-K4nBhkoH3jclaY" onerror="googleError()"></script>
   <title>React App</title>
 </head>
 
