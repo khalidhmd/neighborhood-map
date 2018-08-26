@@ -35,7 +35,7 @@ class App extends Component {
       }.bind(this))
       .catch(function (e) {
         // Code for handling errors
-        console.log('Did not get response successfully from Foursquare' + e);
+        alert('Did not get response successfully from Foursquare.\n' + e);
       });
   }
   state = {
@@ -98,7 +98,7 @@ class App extends Component {
         <div className='App' style={{ height: '95%' }}>
 
           <div className='headcontainer' >
-            <div><button tabIndex='0' onClick={this.toggleList}>Toggle list</button></div>
+            <div><button tabIndex='1' onClick={this.toggleList}>Toggle list</button></div>
             <h1>{this.state.neighborhood}</h1>
           </div>
 

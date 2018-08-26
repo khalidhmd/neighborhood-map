@@ -5,9 +5,7 @@ export default class extends Component {
 
   componentDidMount() {
 
-    if (window.google == undefined) {
-      alert('Google maps did not load properly.\n This maybe due to bad connection to the internet.');
-    } else {
+    if (window.google != undefined) {
       var map = new window.google.maps.Map(this.refs.map, {
         center: { lat: this.props.locations[0].lat, lng: this.props.locations[0].lng },
         zoom: 15
@@ -82,7 +80,7 @@ export default class extends Component {
 
   render() {
     return (
-      <div id="map" ref="map" />
+      <div rol='presentation' aria-hidden='true' tabIndex='2' id="map" ref="map" />
     );
   }
 }

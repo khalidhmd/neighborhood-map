@@ -46,14 +46,21 @@ class ListView extends Component {
               type="text"
               placeholder="Search by place name"
               value={this.state.query}
+              role='search'
               onChange = {(event) => this.updateQuery(event.target.value)}
-              tabIndex='1'/>
+              tabIndex='3'/>
           </div>
         
         <div >
           <ol >
             {this.locations.map((loc, i) => (
-              <li key={i} role='button' data-id={loc.id} onClick={this.clickMarker} className="listitem">
+              <li key={i} 
+                role='button' 
+                data-id={loc.id} 
+                onClick={this.clickMarker}
+                onKeyPress={this.clickMarker} 
+                className="listitem"
+                tabIndex={4 + loc.id} >
                 {loc.name}
               </li>))}
           </ol>
